@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "license": "CreativeCommons https://creativecommons.org/licenses/by-sa/4.0/",
     "dependencies": {
-        "clsx": "latest"
+        "clsx": "latest",
+        "react": "latest"
     }
 }

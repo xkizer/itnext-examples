@@ -18,12 +18,11 @@ export function CampaignsRow({week}) {
  */
 export function CampaignCard({campaign}) {
     const {name, calendarWeek} = campaign
-    const cwObj = new CalendarWeek(calendarWeek)
     
     return (
         <section>
             <h2>{name}</h2>
-            <div>Planned for: {cwObj.format('Y [Week] W')}</div>
+            <div>Planned for: {formatCalendarWeek(calendarWeek, 'Y [Week] W')}</div>
         </section>
     )
 }
@@ -44,12 +43,7 @@ type AppState = {
 type Campaign = {
     campaignId: string
     name: string
-    calendarWeek: string // This needs to be a CalendarWeek object to be usable
+    calendarWeek: string
 }
 
-declare class CalendarWeek {
-    constructor(calendarWeek: string)
-    
-    // Contains some very important methods and getters
-    format(pattern: string): string
-}
+declare function formatCalendarWeek(calendarWeek: string, pattern: string): string

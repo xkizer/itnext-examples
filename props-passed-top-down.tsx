@@ -30,14 +30,27 @@ export function CampaignCard({campaign}) {
 }
 
 type CampaignsListProps = {
-    campaigns: {
+    campaignWeeks: {
         [k: string]: Campaign[];
     };
 };
+
+// sample data:
+const samplCampaignsListProps: CampaignsListProps = {
+    campaignWeeks: {
+        '2019-W12': [
+            { campaignId: 'campaign-1', name: 'Addidas Specials', calendarWeek: '2019-W12' },
+            { campaignId: 'campaign-2', name: 'Summer Heat', calendarWeek: '2019-W12' },
+        ],
+        '2019-W13': [
+            { campaignId: 'campaign-3', name: 'Footwork', calendarWeek: '2019-W13' },
+            { campaignId: 'campaign-4', name: 'Z Essentials', calendarWeek: '2019-W13' },    
+        ]
+    }
+}
 
 type Campaign = {
     campaignId: string;
     name: string;
     calendarWeek: string;
-    brands: string[];
 };
